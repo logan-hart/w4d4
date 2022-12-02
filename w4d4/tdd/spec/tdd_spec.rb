@@ -25,3 +25,48 @@ describe "Array#two_sum" do
     end
 end
 
+describe "#my_transpose" do
+    subject(:rows) {
+        [[0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8]]}
+    let(:cols) {[
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8]
+      ]}
+
+    it "should correctly transpose the array's rows & columns" do 
+        expect(my_transpose(rows)).to eq(cols)
+        expect(my_transpose(cols)).to eq(rows)
+        expect(my_transpose(rows)).to eq(rows.transpose)
+    end
+
+end
+
+describe "stock_picker" do
+    let(:array_1) {[5, 10, 4, 12, 40]} #== [1, 2]
+
+    it "should take in an array of stock prices" do
+        expect{["a","b","c"]}.to raise_error("Not all elements are integers")
+    end
+
+    it "should only consider prices after buy point" do
+        expect(stock_picker(array_1)).to_not eq([4, 2])
+    end
+
+    it "should return the correct pairs of days" do
+        expect(stock_picker(array_1)).to eq([1,2])
+    end
+
+    # it "should return an array of dates" do
+    #     expect(stock_picker(array_1))
+    # end
+
+
+
+
+end
+
+
+
